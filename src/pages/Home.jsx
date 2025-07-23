@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import SearchBar from '../components/SearchBar'
+import SearchBar from '../components/Search/SearchBar'
 import CampaignSlider from '../components/CampaignSlider';
-import Dashboard from './Dashboard';
 
 
 
@@ -24,9 +23,9 @@ export default function Home () {
         {/* Route suggestions */}
       </section>
 
-      <section className="absolute top-[800px] mx-auto px-4 py-0 sm:px-6 lg:px-8">
+      <section className="absolute top-[8cd00px] mx-auto px-4 py-0 sm:px-6 lg:px-8">
         {/* Dashboard */}
-        <Dashboard/>
+      
       </section>
     </div>
   )

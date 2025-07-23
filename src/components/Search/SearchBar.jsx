@@ -45,12 +45,12 @@ export default function SearchBar() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* From */}
               <div>
-                <label htmlFor="to" className="block text-sm font-medium text-gray-800 mb-1">From</label>
+                <label htmlFor="to" className="block text-sm font-medium text-gray-800 mb-1"/>
                 <input
                   type="text"
                   id="to"
                   className="mt-1 block w-full px-4 py-2 border border-gray-200 rounded-md shadow-sm focus:ring-[#F2D129] focus:border-[#F2D129]"
-                  placeholder=" Select"
+                  placeholder=" From"
                   value={toLocation}
                   onChange={(e) => setToLocation(e.target.value)}
                 />
@@ -58,12 +58,12 @@ export default function SearchBar() {
 
               {/* To */}
               <div>
-                <label htmlFor="where" className="block text-sm font-medium text-gray-700 mb-1">To</label>
+                <label htmlFor="where" className="block text-sm font-medium text-gray-700 mb-1"/>
                 <input
                   type="text"
                   id="where"
                   className="mt-1 block w-full px-4 py-2 border border-gray-200 rounded-md shadow-sm focus:ring-[#F2D129] focus:border-[#F2D129]"
-                  placeholder=" Select"
+                  placeholder=" To"
                   value={whereLocation}
                   onChange={(e) => setWhereLocation(e.target.value)}
                 />
