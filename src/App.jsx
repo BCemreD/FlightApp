@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className='bg-[#f4f4f4] min-h-screen  p-4'>
+      <main className='bg-white min-h-screen'>
       <Routes>
           <Route path='/' element={<Home />}></Route>
          

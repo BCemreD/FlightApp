@@ -3,10 +3,10 @@ import React, { useState, useEffect } from 'react';
 export default function CampaignSlider() {
   // Placeholders for camp. images
   const images = [
-    'https://placehold.co/1200x400/e0f2fe/0369a1?text=Campaign+No1',
-    'https://placehold.co/1200x400/fecaca/dc2626?text=Campaign+No2',
+    'https://placehold.co/1200x400/lightgreen/black?text=Campaign+No1',
+    'https://placehold.co/1200x400/lightblue/darkblue?text=Campaign+No2',
     'https://placehold.co/1200x400/dcfce7/16a34a?text=Campaign+No3',
-    'https://placehold.co/1200x400/ffedd5/f97316?text=Campaign+No4',
+    'https://placehold.co/1200x400/yellow/green?text=Campaign+No4',
   ];
 
   // Slide index
@@ -37,7 +37,7 @@ export default function CampaignSlider() {
     <div className="relative w-full overflow-hidden rounded-lg shadow-lg mb-8">
       {/* Slide images */}
       <div
-        className="flex transition-transform duration-700 ease-in-out"
+        className="h-full flex transition-transform duration-700 ease-in-out"
       
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
@@ -56,30 +56,30 @@ export default function CampaignSlider() {
       {/* Nav arrows */}
       <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full
-                   hover:bg-opacity-75 transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-white"
-        aria-label="Önceki Slayt"
+        className="absolute bottom-2 left-4 transform -translate-y-1/2  text-white text-[15px] font-black border border-white border-2 p-1 rounded-full
+                   transition-all duration-500 focus:outline-none "
+        aria-label="Previous"
       >
         &#10094; {/* Left */}
       </button>
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full
-                   hover:bg-opacity-75 transition-all duration-500 focus:outline-none focus:ring-2 focus:ring-white"
+        className="absolute bottom-2 left-30 transform -translate-y-1/2 text-white text-[15px] font-black border border-white border-2 p-1 rounded-full
+                   transition-all duration-500 focus:outline-none "
         aria-label="Next"
       >
         &#10095; {/* Right */}
       </button>
 
       {/* Dot Nav */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className="absolute bottom-8 left-20 transform -translate-x-1/2 flex space-x-2 ">
         {images.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
             className={`w-3 h-3 rounded-full ${
-              currentSlide === index ? 'bg-white' : 'bg-gray-400 bg-opacity-70'
-            } transition-colors duration-500 focus:outline-none focus:ring-2 focus:ring-white`}
+              currentSlide === index ? 'bg-gray-white border-white border-2' : 'bg-white bg-opacity-70 '
+            } transition-colors duration-500 focus:outline-none`}
             aria-label={`Slayt ${index + 1}`}
           ></button>
         ))}

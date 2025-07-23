@@ -22,7 +22,7 @@ export default function Navbar() {
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-[#F2D129] font-semibold hover:bg-[#f2d029be] hover:text-black">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-[#F2D129] font-semibold hover:bg-[#f2d029be] hover:text-[#010326]">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
@@ -58,7 +58,7 @@ export default function Navbar() {
                       to={item.href}
                       aria-current={isActive ? 'page' : undefined}
                       className={classNames(
-                        isActive ? 'bg-[#F2D129] text-black' : 'text-[#F2D129] font-semibold hover:bg-[#f2d029be] hover:text-black',
+                        isActive ? 'bg-[#F2D129] text-[#010326]' : 'text-[#F2D129] font-semibold hover:bg-[#f2d029be] hover:text-[#010326]',
                         'rounded-md px-3 py-2 font-semibold',
                       )}
                     >
@@ -90,7 +90,7 @@ export default function Navbar() {
                 to={item.href}
                 aria-current={isActive ? 'page' : undefined}
                 className={classNames(
-                  isActive ? 'bg-[#F2D129] text-black' : ' text-[#F2D129] hover:bg-[#f2d029be] hover:text-black',
+                  isActive ? 'bg-[#F2D129] text-[#010326]' : ' text-[#F2D129] hover:bg-[#f2d029be] hover:text-[#010326]',
                   'block rounded-md px-3 py-2 text-base font-semibold',
                 )}
               >
