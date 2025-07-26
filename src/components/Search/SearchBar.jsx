@@ -11,6 +11,7 @@ export default function SearchBar() {
   const [passengers, setPassengers] = useState(1);
   const [locations, setLocations] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
+  const [allFlights, setAllFlights] = useState([]);
 
   const [pnrNo, setPnrNo] = useState('');
   const [lastName, setLastName] = useState('');
@@ -24,24 +25,50 @@ export default function SearchBar() {
         console.error('Locations not loaded:', err);
       }
     };
+    const fetchFlights = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/flights/search');
+        setAllFlights(response.data); // Artık allFlights'ta
+      } catch (error) {
+        console.error('Flights not loaded:', error);
+      }
+    };
 
     fetchLocations();
+    fetchFlights();
   }, []);
 
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/flights/search');
-      const allFlights = response.data;
+const handleSearch = async () => {
+  try {
+    const selectedDate = new Date(departureTime);
+    const startOfDay = new Date(selectedDate);
+    startOfDay.setHours(0, 0, 0, 0);
+    //this parse for prevent time zone probs.
+    const endOfDay = new Date(selectedDate);
+    endOfDay.setDate(endOfDay.getDate() + 1);
+    endOfDay.setHours(23, 59, 0, 0); 
 
-      const filtered = allFlights.filter(flight =>
+    const filtered = allFlights.filter(flight => {
+      const flightDate = new Date(flight.departureTime);
+      return (
         flight.from.toLowerCase() === fromLocation.toLowerCase() &&
         flight.to.toLowerCase() === toLocation.toLowerCase() &&
-        flight.departureTime.slice(0, 10) === departureTime
+        flightDate >= startOfDay && flightDate < endOfDay
       );
+    });
 
-      setSearchResults(filtered);
+    setSearchResults(filtered);
+  } catch (error) {
+    console.error('Search error:', error);
+  }
+};
+
+  const fetchAllFlights = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/flights/all');
+      setSearchResults(response.data);
     } catch (error) {
-      console.error('Search error:', error);
+      console.error('Not reached all flights:', error);
     }
   };
 
@@ -87,8 +114,14 @@ export default function SearchBar() {
               </div>
             </div>
 
-            <button onClick={handleSearch} className="w-full bg-yellow-400 py-2 rounded font-bold hover:bg-yellow-300">
+            <button onClick={handleSearch} className="w-auto bg-yellow-400 p-2 mx-4 rounded font-bold hover:bg-yellow-300">
               Search Flight
+            </button>
+            <button
+              onClick={fetchAllFlights}
+              className="relative w-auto bg-yellow-400 p-2 mx-4 rounded font-bold hover:bg-yellow-300"
+            >
+              Avaible Flights
             </button>
 
             <div className="mt-6">
