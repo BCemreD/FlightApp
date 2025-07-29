@@ -3,6 +3,7 @@ import './App.css'
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import Navbar from './components/Navbar'
+import BookFlight from './components/Reservation/BookFlight';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <main className='bg-white min-h-screen'>
       <Routes>
           <Route path='/' element={<Home />}></Route>
+          <Route path='/reserve/:flightId' element={<BookFlight/>}></Route>
          
         </Routes>
       </main>

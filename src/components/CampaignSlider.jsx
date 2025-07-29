@@ -56,16 +56,14 @@ export default function CampaignSlider() {
       {/* Nav arrows */}
       <button
         onClick={prevSlide}
-        className="absolute bottom-2 left-4 transform -translate-y-1/2  text-white text-[15px] font-black border border-white border-2 p-1 rounded-full
-                   transition-all duration-500 focus:outline-none "
+        className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-[15px] font-black border-white border-2 p-1 rounded-full z-10"
         aria-label="Previous"
       >
         &#10094; {/* Left */}
       </button>
       <button
         onClick={nextSlide}
-        className="absolute bottom-2 left-30 transform -translate-y-1/2 text-white text-[15px] font-black border border-white border-2 p-1 rounded-full
-                   transition-all duration-500 focus:outline-none "
+        className="absolute top-1/2 right-4 transform -translate-y-1/2 text-white text-[15px] font-black border-white border-2 p-1 rounded-full z-10"
         aria-label="Next"
       >
         &#10095; {/* Right */}

@@ -16,13 +16,13 @@ export default function Navbar() {
   const location = useLocation();
 
   return (
-    <Disclosure as="nav" className=" bg-[#010326]">
+    <Disclosure as="nav" className=" w-full bg-[#030BA6] rounded-3xl">
       <div className="mx-auto w-full px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
 
             {/* Mobile menu button*/}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-[#F2D129] font-semibold hover:bg-[#f2d029be] hover:text-[#010326]">
+            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-[#F2E205] font-semibold hover:bg-[#F2E205] hover:text-[#0550f2]">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
               <Bars3Icon aria-hidden="true" className="block size-6 group-data-open:hidden" />
@@ -40,7 +40,7 @@ export default function Navbar() {
                   className="h-16 w-auto"
                 />
               </Link>
-               <span className="text-[#F2D129] px-8 font-semibold hidden sm:inline"><Link to="/">BCemreD</Link></span>
+               <span className="text-[#F2E205] px-8 font-semibold hidden sm:inline"><Link to="/">BCemreD</Link></span>
             </div>
 
             {/*Web View */}
@@ -58,7 +58,7 @@ export default function Navbar() {
                       to={item.href}
                       aria-current={isActive ? 'page' : undefined}
                       className={classNames(
-                        isActive ? 'bg-[#F2D129] text-[#010326]' : 'text-[#F2D129] font-semibold hover:bg-[#f2d029be] hover:text-[#010326]',
+                        isActive ? 'bg-[#F2E205] text-[#0550f2]' : 'text-[#F2E205] font-semibold hover:bg-[#0550f2] hover:text-white',
                         'rounded-md px-3 py-2 font-semibold',
                       )}
                     >
@@ -90,7 +90,7 @@ export default function Navbar() {
                 to={item.href}
                 aria-current={isActive ? 'page' : undefined}
                 className={classNames(
-                  isActive ? 'bg-[#F2D129] text-[#010326]' : ' text-[#F2D129] hover:bg-[#f2d029be] hover:text-[#010326]',
+                  isActive ? 'bg-[#F2D129] text-[#0550f2]' : ' text-[#F2D129] hover:bg-[#f2d029be] hover:text-[#0550f2]',
                   'block rounded-md px-3 py-2 text-base font-semibold',
                 )}
               >
