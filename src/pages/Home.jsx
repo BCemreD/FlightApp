@@ -10,7 +10,7 @@ export default function Home() {
 
   useEffect(() => {
     const apiUrl = import.meta.env.VITE_API_BASE_URL;
-    fetch(`${apiUrl}/api/flight`)
+    fetch(`${apiUrl}/api/flights`)
       .then((res) => res.json())
       .then((data) => {
         setFlights(data);
