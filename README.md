@@ -1,12 +1,50 @@
-# React + Vite
+# Flight App 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for a flight reservation system built with **React** and **Tailwind CSS**.  
+Users can search for flights, view available results, and navigate to booking pages. Also, backend's (fligt-app-backend / https://github.com/BCemreD/FlightAppBackend) created for this app.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- React Router
+- Axios
+- Tailwind CSS
+- Vite (build tool)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+- Search flights by:
+  - Departure city
+  - Arrival city
+  - Departure date
+- List available flights
+- Navigate to reservation page
+- Display reservation details after PNR + last name search
+
+---
+
+## 📦 Install & Run
+
+```bash
+git clone https://github.com/your-username/flight-app-frontend.git
+cd flight-app-frontend
+npm install
+npm run dev
+Make sure the backend is running at http://localhost:5000 (or change in Axios base URLs).
+```
+---
+
+## 🧩 Next Steps
+* Add error handling & user feedback on forms
+* Improve UX for invalid PNRs or dates
+* Add loading indicators
+* Responsive UI improvements
+* Authentication integration (when ready)
+
+
+
+
