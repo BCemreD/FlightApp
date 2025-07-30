@@ -5,18 +5,30 @@ import CampaignSlider from '../components/CampaignSlider';
 
 
 
-export default function Home () {
+export default function Home() {
+  const [flights, setFlights] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+    fetch(`${apiUrl}/api/flight`)
+      .then((res) => res.json())
+      .then((data) => {
+        setFlights(data);
+        console.log('Gelen uçuşlar:', data);
+      })
+      .catch((err) => console.error('Uçuşlar alınamadı:', err));
+  }, []);
   return (
     <div className="mx-auto px-4 py-0 sm:px-6 lg:px-8">
 
       <section>
         {/* Campaign images */}
-        <CampaignSlider/>
-    
+        <CampaignSlider />
+
       </section>
 
       <section className="absolute top-[400px] left-1/2 transform -translate-x-1/2 w-full">
-        <SearchBar/>
+        <SearchBar />
       </section>
 
       <section>
@@ -25,7 +37,7 @@ export default function Home () {
 
       <section className="absolute top-[8cd00px] mx-auto px-4 py-0 sm:px-6 lg:px-8">
         {/* Dashboard */}
-      
+
       </section>
     </div>
   )
