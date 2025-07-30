@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 export default function BookFlight() {
   const { flightId } = useParams();
   const [flight, setFlight] = useState(null);
@@ -10,7 +11,7 @@ export default function BookFlight() {
 
   useEffect(() => {
     const fetchFlight = async () => {
-      const res = await axios.get(`http://localhost:5000/flights/${flightId}`);
+       const res = await axios.get(`${API_BASE_URL}/flights/${flightId}`);
       setFlight(res.data);
     };
     fetchFlight();
@@ -33,7 +34,7 @@ export default function BookFlight() {
 
   const handleBook = async () => {
     try {
-      const res = await axios.post('http://localhost:5000/reservations/book', {
+       const res = await axios.post(`${API_BASE_URL}/reservations/book`, {
         flightId,
         passengerList
       });

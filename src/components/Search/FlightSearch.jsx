@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL; 
+
 export default function FlightCard() {
 
 
@@ -17,7 +19,7 @@ export default function FlightCard() {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/flights/locations');
+        const res = await axios.get(`${API_BASE_URL}/flights/locations`);
         setLocations(res.data);
       } catch (err) {
         console.error('Locations not loaded:', err);
@@ -25,7 +27,7 @@ export default function FlightCard() {
     };
     const fetchFlights = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/flights/search');
+        const response = await axios.get(`${API_BASE_URL}/flights/all`);
         setAllFlights(response.data);
       } catch (error) {
         console.error('Flights not loaded:', error);
@@ -63,7 +65,7 @@ export default function FlightCard() {
 
   const fetchAllFlights = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/flights/all');
+      const response = await axios.get(`${API_BASE_URL}/flights/all`);
       setSearchResults(response.data);
     } catch (error) {
       console.error('Not reached all flights:', error);
