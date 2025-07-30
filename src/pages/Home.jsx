@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'; // <-- Burayı güncelledik!
 import { Link } from 'react-router-dom';
-import SearchBar from '../components/Search/SearchBar'
+import SearchBar from '../components/Search/SearchBar';
 import CampaignSlider from '../components/CampaignSlider';
 
 
